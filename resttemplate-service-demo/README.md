@@ -168,7 +168,7 @@ Same 'Users' and 'Income' database tables used from expense tracker project. Exp
 
 Testing screenshots for requst routing, load balancing across multiple instances and Resilience4j circuit breaker using RestTemplate added in 'RestTemplate-testing' document.
 
-Available under the `documents` folder.
+Available under the `docs` folder.
 
 
 ## Author
