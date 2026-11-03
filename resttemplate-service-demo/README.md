@@ -1,7 +1,7 @@
 
-## Architecture
+## Prototype Objective
 
-This prototype demonstrates inter-service communication using RestTemplate in a microservices architecture.
+This prototype demonstrates service-to-servic communication in a Spring Boot microservices architecture using RestTemplate. The project showcases Eureka Service Discovery, API Gateway routing, Client-Side Load Balancing, and Resilience4j Circuit Breaker implementation for fault tolerance.
 
 ### Components
 
@@ -108,7 +108,7 @@ public RestTemplate getRestTemplate() {
 }
 ```
 
-### Income Service Instances
+### Contacts Service Instances
 - CONTACTS-MS : 8080
 - CONTACTS-MS : 8084
 - CONTACTS-MS : 8086
@@ -158,7 +158,7 @@ Fallback response is returned instead of propagating the exception.
     USER-MS
     - spring-cloud-starter-netflix-eureka-client
     - spring-cloud-starter-circuitbreaker-resilience4j
-    INCOME-MS
+    CONTACTS-MS
     - spring-cloud-starter-netflix-eureka-client
 
 ---
