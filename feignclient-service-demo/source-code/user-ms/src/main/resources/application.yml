@@ -1,0 +1,22 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+     defaultZone: http://localhost:8761/eureka/
+spring:
+   cloud:
+    openfeign:
+       circuitbreaker:
+        # 1. Essential flag to route Feign through Resilience4j
+         enabled: true 
+resilience4j:
+   circuitbreaker:
+    instances:
+        # 2. Must match the exact name property declared in @FeignClient
+      contacts-ms:
+          failureRateThreshold: 50
+          minimumNumberOfCalls: 5
+          permittedNumberOfCallsInHalfOpenState: 3
+          waitDurationInOpenState: 20s
+          automaticTransitionFromOpenToHalfOpenEnabled: true
