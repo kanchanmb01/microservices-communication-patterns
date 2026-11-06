@@ -93,6 +93,17 @@ It enables dynamic service discovery among microservices.
 - USER-MS
 - CONTACTS-MS
 
+### API Gateway
+
+Spring Cloud Gateway acts as the single entry point for all external requests.
+
+Configured routes:
+
+- /api/user/** → USER-MS
+- /api/contacts/** → CONTACTS-MS
+
+Service names are resolved dynamically through Eureka Service Discovery.
+
 ---
 ## Load Balancer Configuration
 
@@ -151,15 +162,28 @@ Fallback response is returned instead of propagating the exception.
 ---
 
 ## Key Dependencies
-    Eureka server- 
-    - spring-cloud-starter-netflix-eureka-server
-    API Gateway-
-    - spring-cloud-starter-gateway
-    USER-MS
-    - spring-cloud-starter-netflix-eureka-client
-    - spring-cloud-starter-circuitbreaker-resilience4j
-    CONTACTS-MS
-    - spring-cloud-starter-netflix-eureka-client
+   
+#### RestTemplate
+- spring-boot-starter-web
+
+#### Eureka Server
+- spring-cloud-starter-netflix-eureka-server
+
+#### API Gateway
+- spring-cloud-starter-gateway
+
+#### Eureka Client
+- spring-cloud-starter-netflix-eureka-client
+
+#### Load Balancer
+- spring-cloud-starter-loadbalancer
+
+#### Resilience4j Circuit Breaker
+- spring-cloud-starter-circuitbreaker-resilience4j
+
+#### Database
+- mysql-connector-j
+- spring-boot-starter-data-jpa
 
 ---
 
